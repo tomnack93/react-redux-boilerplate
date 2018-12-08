@@ -1,0 +1,11 @@
+@import '../../css/variables';
+
+.todo-wrapper {
+    display: block;
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: scroll;
+    padding: 15px;
+    background-color: $faint-gray;
+}

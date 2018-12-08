@@ -1,0 +1,75 @@
+@import '../../css/variables';
+
+.task-wrapper {
+    width: 450px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 40px;
+    background-color: $white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.26);
+}
+
+.task-content {
+    display: block;
+    float: left;
+    line-height: 100px;
+    padding-left: 20px;
+    font-size: 1.6rem;
+}
+
+.toggle {
+    display: block;
+    float: right;
+   
+}
+
+.checkbox {
+    display: block;
+    float: right;
+    position: relative;
+    margin: auto;
+    font-size: 16px;
+    width: 50px;
+    line-height: 100px;
+}
+
+.checkbox-input {
+    display: none;
+
+    &:checked {
+        &+.checkbox-span {
+            color: $green;
+        }
+
+        &+.checkbox-span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -5px;
+            left: 5px;
+            width: 7px;
+            height: 14px;
+            transform: rotate(40deg);
+            border-bottom: 3px solid $green;
+            border-right: 3px solid $green;          
+        }
+    }
+}
+
+.checkbox-span {
+    padding-left: 20px;
+    position:relative;
+    margin-right: 20px;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border: 1px solid $gray;
+        border-radius: 4px;
+    }
+}
