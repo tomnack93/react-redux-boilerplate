@@ -6,15 +6,21 @@ import { creators } from '../actions';
 import { AppState } from '../reducers';
 
 import { Todo } from '../components/Todo';
+import { ReactCookieProps, Cookies } from "react-cookie";
  
 interface State {
   state: AppState
+  cookies: Cookies
 }
 type Props = typeof creators & State
 
 class Container extends React.Component<Props> {
   componentDidMount() {
-    const { addTask } = this.props
+    const { addTask, cookies } = this.props
+    cookies.set('name', 'value');
+    const c = cookies.get('name');
+    console.log(c);
+
     const taskContents: string[] = [
       'DO NOT talk about F.C.',
       'DO NOT talk about F.C.'
@@ -35,8 +41,11 @@ class Container extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = (state: AppState) => {
-  return {state}
+const mapStateToProps = (state: AppState, ownProps: ReactCookieProps) => {
+  return ({
+    state: state,
+    cookies: ownProps.cookies
+  })
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
