@@ -5,7 +5,7 @@ export interface TodoState {
   id: number
 }
 
-const initialState: TodoState = {
+export const initialState: TodoState = {
   tasks: [],
   id: 0
 }
