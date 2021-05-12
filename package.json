@@ -24,7 +24,7 @@
     "jest": "^26.4.2",
     "mini-css-extract-plugin": "^0.4.5",
     "node-sass": "^4.10.0",
-    "postcss": "^7.0.6",
+    "postcss": "^8.2.10",
     "postcss-loader": "^3.0.0",
     "redux-devtools-extension": "^2.13.7",
     "sass-loader": "^7.1.0",
